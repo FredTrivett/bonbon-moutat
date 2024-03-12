@@ -3,26 +3,15 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: {
-        background: "hsl(var(--background) /<alpha-value>)",
-        foreground: "hsl(var(--foreground) /<alpha-value>)",
+      colors:{
+        violet: "hsl(var(--violet)/<alpha-value>)",
+        white: "hsl(var(--white)/<alpha-value>)",
+        lightblue: "hsl(var(--lightblue)/<alpha-value>)",
+        darkblue: "hsl(var(--darkblue)/<alpha-value>)",
       },
-      textColor: {
-        background: "hsl(var(--background) /<alpha-value>)",
-        foreground: "hsl(var(--foreground) /<alpha-value>)",
-      },
-      maxWidth: {
-        ch: "60ch",
-      },
-      aspectRatio: {
-        card: "1 / 1.25",
-      },
-      backgroundImage: {
-        shape: "url('./assets/bgshapes.svg')",
-      },
-      borderRadius: {
-        DEFAULT: "var(--radius)",
-      },
+      backgroundImage:{
+        bg: "url('/public/background.png')",
+      }
     },
   },
   plugins: [],

@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    /* Primitives Tokens  */
-    --clr-white: 0 0% 100%;
-    --clr-dark-grey: 0 0% 10%;
-    /* Sementics Tokens */
-    --foreground: var(--clr-dark-grey);
-    --background: var(--clr-white);
-
-    --radius: 0.5rem;
-    --gap: 1rem;
-
-    
-    
+@layer base{
+  :root{
+  --dark-blue:235 29% 25%;
+  --violet:228 64% 69%;
+  --light-blue: 195 69% 77%;
+  --white: 0 0% 100%;
+  --grey: 0 0% 77%;
+  
+  /*primitive*/
+  --white: var(--white);
+  --violet: var(--violet);
+  --grey: var(--grey);
+  --lightblue: var(--light-blue);
+  --darkblue:var(--dark-blue);
   }
 }
