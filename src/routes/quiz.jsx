@@ -1,10 +1,18 @@
-// Assuming you have a QuizCard component you're importing
-import QuizCard from '../ui/Quiz/QuizCard';
+import { useLoaderData } from 'react-router-dom';
+import QuizCard from '../ui/Quiz/QuizCard.jsx';
+import { fetchQuizData } from '../lib/loaders.js'; // Correctly import fetchQuizData
 
-export default function QuizPage() {
+export async function loader() {
+    let QuizData = await fetchQuizData();
+    return QuizData;
+}
+
+export default function Quiz() {
+    const data = useLoaderData();
+
     return (
-        <div>
-            <QuizCard />
-        </div>
+        <>
+            <QuizCard {...data} />
+        </>
     );
 }
