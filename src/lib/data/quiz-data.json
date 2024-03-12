@@ -1,0 +1,82 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "Combien de dents a un enfant avant que les dents adultes ne commencent à pousser ?",
+            "responses": {
+                "a": {
+                    "text": "20 dents",
+                    "score": 1
+                },
+                "b": {
+                    "text": "24 dents",
+                    "score": 0
+                },
+                "c": {
+                    "text": "28 dents",
+                    "score": 0
+                },
+                "d": {
+                    "text": "32 dents",
+                    "score": 0
+                }
+            },
+            "feedback": {
+                "correct": "Bravo ! Un enfant a normalement 20 dents.",
+                "incorrect": "Presque ! Un enfant a normalement 20 dents."
+            }
+        },
+        {
+            "id": 2,
+            "question": "À quel âge les dents adultes commencent-elles généralement à pousser ?",
+            "responses": {
+                "a": {
+                    "text": "3 ans",
+                    "score": 0
+                },
+                "b": {
+                    "text": "6 ans",
+                    "score": 1
+                },
+                "c": {
+                    "text": "8 ans",
+                    "score": 0
+                },
+                "d": {
+                    "text": "10 ans",
+                    "score": 0
+                }
+            },
+            "feedback": {
+                "correct": "Exact ! Les dents adultes commencent à pousser vers l'âge de 6 ans.",
+                "incorrect": "Raté ! Les dents adultes commencent généralement à pousser vers l'âge de 6 ans."
+            }
+        },
+        {
+            "id": 3,
+            "question": "Quelle est la principale cause de la carie dentaire ?",
+            "responses": {
+                "a": {
+                    "text": "Manger trop de légumes",
+                    "score": 0
+                },
+                "b": {
+                    "text": "Boire de l'eau",
+                    "score": 0
+                },
+                "c": {
+                    "text": "Les bactéries dans la bouche",
+                    "score": 1
+                },
+                "d": {
+                    "text": "Se brosser les dents trop fort",
+                    "score": 0
+                }
+            },
+            "feedback": {
+                "correct": "C'est ça ! Les bactéries dans la bouche sont la principale cause de la carie dentaire.",
+                "incorrect": "Pas tout à fait. La principale cause de la carie dentaire est les bactéries dans la bouche."
+            }
+        }
+    ]
+}
