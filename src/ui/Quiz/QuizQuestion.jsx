@@ -18,7 +18,7 @@ export default function QuizQuestion({ question, options, handleAnswer, id, hand
             </div>
             <div className="px-6 z-10">
                 <h4 className="text-center text-xl font-semibold">{question}</h4>
-                <ul className="flex flex-col gap-3 pt-4">
+                <ul className="flex flex-col gap-3 pt-6">
                     {options.map((option, index) => (
                         <li key={index}>
                             <button
@@ -32,7 +32,10 @@ export default function QuizQuestion({ question, options, handleAnswer, id, hand
                     ))}
                 </ul>
             </div>
-            <div className="bg-indigo-400 z-10 w-full flex align-center justify-center p-6 rounded-t-[30px] flex-col">
+            <div
+                className={`${selectedOption ? 'bg-indigo-500' : 'bg-indigo-300'
+                    } z-10 w-full flex align-center justify-center p-6 rounded-t-[30px] flex-col`}
+            >
                 <button
                     className="font-normal text-indigo-50 text-center w-full"
                     onClick={() => selectedOption && handleValidation(selectedOption.score)}
@@ -41,6 +44,7 @@ export default function QuizQuestion({ question, options, handleAnswer, id, hand
                     Valider
                 </button>
             </div>
+
         </div>
     );
 }

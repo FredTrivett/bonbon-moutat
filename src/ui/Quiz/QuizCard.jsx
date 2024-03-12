@@ -3,46 +3,46 @@ import QuizQuestion from './QuizQuestion'; // Adjust the import path as necessar
 
 function QuizCard({ questions }) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [score, setScore] = useState(0); // Step 1: Initialize score state
+    const [quizFinished, setQuizFinished] = useState(false); // Track if the quiz is finished
 
-    // Handle selecting an answer
-    const handleAnswerSelect = (score) => {
-        setSelectedAnswer(score);
-    };
+    const handleValidation = (selectedScore) => {
+        // Update the score based on the selected option's score
+        setScore(prevScore => prevScore + selectedScore); // Step 2: Update score
 
-    // Move to the next question and handle scoring here if necessary
-    const handleValidation = (score) => {
-        // Example scoring logic or state update
-        console.log(`Answer selected with score: ${score}`);
-
-        // Reset selected answer for the next question
-        setSelectedAnswer(null);
-
-        // Move to the next question if there are more questions
+        // Check if this is the last question
         if (currentQuestionIndex < questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
-            // Handle quiz completion
-            console.log("Quiz completed");
-            // Reset or navigate to a results page, etc.
+            // Mark the quiz as finished
+            setQuizFinished(true);
         }
     };
 
+    if (quizFinished) {
+        // Step 3: Display final score
+        return (
+            <div className="score-display">
+                <h2>Your Score: {score} / {questions.length}</h2>
+                {/* You can add a button or link here to restart the quiz or go back to the main menu */}
+            </div>
+        );
+    }
+
     const currentQuestion = questions[currentQuestionIndex];
-    const options = Object.values(currentQuestion.responses).map((response) => ({
+    const options = Object.values(currentQuestion.responses).map(response => ({
         text: response.text,
-        score: response.score,
+        score: response.score, // Ensure this is a number
     }));
 
     return (
         <QuizQuestion
-            key={currentQuestion.id} // Ensure this changes with each question
+            key={currentQuestion.id} // Force component reset on question change
             question={currentQuestion.question}
             options={options}
             handleValidation={handleValidation}
             id={currentQuestion.id}
         />
-
     );
 }
 
