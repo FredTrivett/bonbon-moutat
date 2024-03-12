@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Root from './routes/root.jsx';
 import ErrorPage from './ui/ErrorPage/';
-import Quiz from './routes/quiz';
+import Quiz, { loader as QuizLoader } from './routes/quiz.jsx';
 
 import './index.css';
 
@@ -16,9 +16,9 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: '/quiz',
+        path: '/Quiz',
         element: <Quiz />,
-        loader: ourQuiz
+        loader: QuizLoader
       },
     ],
   }

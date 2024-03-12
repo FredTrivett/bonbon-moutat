@@ -3,13 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors:{
+      colors: {
         violet: "hsl(var(--violet)/<alpha-value>)",
-        white: "hsl(var(--white)/<alpha-value>)",
         lightblue: "hsl(var(--lightblue)/<alpha-value>)",
         darkblue: "hsl(var(--darkblue)/<alpha-value>)",
       },
-      backgroundImage:{
+      backgroundImage: {
         bg: "url('/public/background.png')",
       }
     },

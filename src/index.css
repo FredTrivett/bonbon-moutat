@@ -4,8 +4,8 @@
 
 @layer base{
   :root{
-  --dark-blue:235 29% 25%;
-  --violet:228 64% 69%;
+  --dark-blue: 235 29% 25%;
+  --violet: 228 64% 69%;
   --light-blue: 195 69% 77%;
   --white: 0 0% 100%;
   --grey: 0 0% 77%;
