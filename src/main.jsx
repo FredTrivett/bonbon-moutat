@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Root from './routes/root.jsx';
 import ErrorPage from './ui/ErrorPage/';
+import Quiz from './routes/quiz';
 
 import './index.css';
 
@@ -14,11 +15,11 @@ const router = createBrowserRouter([
     errorElement: < ErrorPage />,
     element: <Root />,
     children: [
-      // {
-      //   path: '/team/:teamName',
-      //   element: <OurTeams />,
-      //   loader: ourTeamLoader
-      // },
+      {
+        path: '/quiz',
+        element: <Quiz />,
+        loader: ourQuiz
+      },
     ],
   }
 ]);
