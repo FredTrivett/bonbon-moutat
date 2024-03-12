@@ -1,37 +1,32 @@
-import React, { Children } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import Root from './routes/root.jsx';
-import ErrorPage from './ui/ErrorPage/';
-import Quiz from './routes/quiz';
-
-import './index.css';
-
+import Root from './routes/root';
+import ErrorPage from './ui/ErrorPage';
+import Quiz from './routes/quiz'; // Adjust the import based on your file naming
 
 const router = createBrowserRouter([
   {
     path: '/',
-    errorElement: < ErrorPage />,
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
-        path: '/quiz',
+        path: 'quiz',
         element: <Quiz />,
         loader: ourQuiz
       },
     ],
-  }
+  },
 ]);
 
-const rootElement = document.querySelector('#root');
-
+const rootElement = document.getElementById('root');
 if (rootElement) {
-  ReactDOM.createRoot(document.querySelector('#root')).render(
+  ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
       <RouterProvider router={router} />
-    </React.StrictMode>,
-  )
+    </React.StrictMode>
+  );
 } else {
   console.error('No root element found');
 }
