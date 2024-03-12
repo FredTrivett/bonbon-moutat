@@ -1,23 +1,48 @@
-import React from 'react';
-// import { fetchQuizData } from '../../lib/loader'; // Remove this if you're passing data as props
-import Button from './Button'; // Verify the correct path
+import React, { useState } from 'react';
+import QuizQuestion from './QuizQuestion'; // Adjust the import path as necessary
 
-function QuizCard({ questions }) { // Assume questions are passed as props
+function QuizCard({ questions }) {
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
+
+    // Handle selecting an answer
+    const handleAnswerSelect = (score) => {
+        setSelectedAnswer(score);
+    };
+
+    // Move to the next question and handle scoring here if necessary
+    const handleValidation = (score) => {
+        // Example scoring logic or state update
+        console.log(`Answer selected with score: ${score}`);
+
+        // Reset selected answer for the next question
+        setSelectedAnswer(null);
+
+        // Move to the next question if there are more questions
+        if (currentQuestionIndex < questions.length - 1) {
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
+        } else {
+            // Handle quiz completion
+            console.log("Quiz completed");
+            // Reset or navigate to a results page, etc.
+        }
+    };
+
+    const currentQuestion = questions[currentQuestionIndex];
+    const options = Object.values(currentQuestion.responses).map((response) => ({
+        text: response.text,
+        score: response.score,
+    }));
+
     return (
-        <div>
-            {questions.map((question, index) => (
-                <div key={question.id} className="question">
-                    <h2>{`Question ${index + 1}: ${question.question}`}</h2>
-                    <ul>
-                        {Object.entries(question.responses).map(([key, response]) => (
-                            <li key={key}>
-                                <button>{response.text}</button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
-        </div>
+        <QuizQuestion
+            key={currentQuestion.id} // Ensure this changes with each question
+            question={currentQuestion.question}
+            options={options}
+            handleValidation={handleValidation}
+            id={currentQuestion.id}
+        />
+
     );
 }
 
