@@ -37,7 +37,7 @@ function QuizCard({ questions }) {
     const currentQuestion = questions[currentQuestionIndex];
 
     if (showFeedback) {
-        return <QuizAnswer id={currentQuestion.id} feedback={feedbackMessage} onClose={handleNextQuestion} />;
+        return <QuizAnswer id={currentQuestion.id} question={currentQuestion.question} feedback={feedbackMessage} onClose={handleNextQuestion} />;
     }
 
     return (
