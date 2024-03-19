@@ -15,7 +15,7 @@ export default function QuizQuestion({ question, options, id, onAnswerSelected }
 
     return (
         <div className="flex flex-col items-center justify-between relative h-full">
-            <img src="/bg-gradient.png" className="absolute z-0" alt="" />
+            <img src="/bg-gradiant.png" className="absolute z-0 top-0 h-full w-full" alt="" />
             <div className="bg-indigo-400 w-full z-10 flex align-center justify-center p-6 rounded-b-[30px] flex-col">
                 <h2 className="font-light text-indigo-50 text-center">Le Quizz de Pompon</h2>
                 <h3 className="text-indigo-50 text-xl font-medium text-center">Question {id}</h3>
