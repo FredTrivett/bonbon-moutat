@@ -1,47 +1,51 @@
 import React, { useState } from 'react';
-import QuizQuestion from './QuizQuestion'; // Adjust the import path as necessary
+import QuizQuestion from './QuizQuestion';
+import QuizAnswer from './QuizAnswer';
 
 function QuizCard({ questions }) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [score, setScore] = useState(0); // Step 1: Initialize score state
-    const [quizFinished, setQuizFinished] = useState(false); // Track if the quiz is finished
+    const [score, setScore] = useState(0);
+    const [quizFinished, setQuizFinished] = useState(false);
+    const [showFeedback, setShowFeedback] = useState(false);
+    const [feedbackMessage, setFeedbackMessage] = useState("");
 
-    const handleValidation = (selectedScore) => {
-        // Update the score based on the selected option's score
-        setScore(prevScore => prevScore + selectedScore); // Step 2: Update score
+    const handleAnswerSelected = (selectedScore, feedback) => {
+        if (selectedScore > 0) {
+            setScore((prevScore) => prevScore + selectedScore);
+        }
+        setFeedbackMessage(selectedScore > 0 ? feedback.correct : feedback.incorrect);
+        setShowFeedback(true);
+    };
 
-        // Check if this is the last question
+    const handleNextQuestion = () => {
         if (currentQuestionIndex < questions.length - 1) {
-            setCurrentQuestionIndex(currentQuestionIndex + 1);
+            setCurrentQuestionIndex((currentIndex) => currentIndex + 1);
         } else {
-            // Mark the quiz as finished
             setQuizFinished(true);
         }
+        setShowFeedback(false);
     };
 
     if (quizFinished) {
-        // Step 3: Display final score
         return (
             <div className="score-display">
                 <h2>Your Score: {score} / {questions.length}</h2>
-                {/* You can add a button or link here to restart the quiz or go back to the main menu */}
             </div>
         );
     }
 
+    if (showFeedback) {
+        return <QuizAnswer feedback={feedbackMessage} onClose={handleNextQuestion} />;
+    }
+
     const currentQuestion = questions[currentQuestionIndex];
-    const options = Object.values(currentQuestion.responses).map(response => ({
-        text: response.text,
-        score: response.score, // Ensure this is a number
-    }));
 
     return (
         <QuizQuestion
-            key={currentQuestion.id} // Force component reset on question change
             question={currentQuestion.question}
-            options={options}
-            handleValidation={handleValidation}
+            options={currentQuestion.responses}
             id={currentQuestion.id}
+            onAnswerSelected={(selectedScore) => handleAnswerSelected(selectedScore, currentQuestion.feedback)}
         />
     );
 }
