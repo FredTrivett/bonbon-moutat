@@ -34,11 +34,11 @@ function QuizCard({ questions }) {
         );
     }
 
-    if (showFeedback) {
-        return <QuizAnswer feedback={feedbackMessage} onClose={handleNextQuestion} />;
-    }
-
     const currentQuestion = questions[currentQuestionIndex];
+
+    if (showFeedback) {
+        return <QuizAnswer id={currentQuestion.id} feedback={feedbackMessage} onClose={handleNextQuestion} />;
+    }
 
     return (
         <QuizQuestion
