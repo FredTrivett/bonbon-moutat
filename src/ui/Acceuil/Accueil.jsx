@@ -6,7 +6,7 @@ import chronometre from '/chronomètre.svg'
 import calendrier from '/calendar.svg'
 import soin from '/health.svg'
 import dent from '/tooth.svg'
-
+import { Link } from 'react-router-dom'
 
 export default function Accueil(){
 return (
@@ -35,35 +35,40 @@ return (
 </header>
 
 <div className='flex flex-col flex-wrap  mt-8 gap-5'>
-    <div className='flex gap-4 items-center justify-start border-2 rounded-2xl px-4 py-1 mx-8'>
+    <div className='flex gap-4 items-center justify-start border-2 rounded-2xl px-4 py-1 mx-8 cursor-pointer'>
         <img src={calendrier} alt='chronometre icon' className='w-8'/>
        
         <h2 className="text-xs">
         Mon calendrier de suivi
         </h2>
     </div>
-    <div className='flex gap-4 items-center justify-start border-2 rounded-2xl px-4 py-1 mx-8'>
+    <Link to="/timer">
+    <div className='flex gap-4 items-center justify-start border-2 rounded-2xl px-4 py-1 mx-8 cursor-pointer'>
         <img src={chronometre} alt='chronometre icon' className='w-8'/>
        
         <h2 className="text-xs">
         Mon chronomètre
         </h2>
     </div>
-    <div className='flex gap-4 items-center justify-start border-2 rounded-2xl px-4 py-1 mx-8'>
+    </Link>
+    <Link to="/soin_des_dents">
+    <div className='flex gap-4 items-center justify-start border-2 rounded-2xl px-4 py-1 mx-8 cursor-pointer'>
         <img src={soin} alt='chronometre icon' className='w-8'/>
        
         <h2 className="text-xs">
        Prendre soin de mes dents
         </h2>
     </div>
-    <div className='flex gap-4 items-center justify-start border-2 rounded-2xl px-4 py-1 mx-8'>
+    </Link>
+    <Link to="/quiz">
+    <div className='flex gap-4 items-center justify-start border-2 rounded-2xl px-4 py-1 mx-8 cursor-pointer'>
         <img src={dent} alt='chronometre icon' className='w-8'/>
        
         <h2 className="text-xs">
         Le quizz des dents
         </h2>
     </div>
-
+    </Link>
 
 </div>
 </>

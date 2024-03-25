@@ -9,7 +9,7 @@ import dentist from '/dentist.png'
 export default function Carie(){
 return (
     <>
-<header className= 'bg-indigo-400 pb-10'>
+<header className= 'relative bg-indigo-400 pb-10'>
     <nav className='flex justify-end mr-6 pt-5'>
     <img className=' justify-end' src={compte} alt='comptelogo' />
     </nav>
@@ -26,7 +26,6 @@ return (
         </h1>
     </div>
 </header>
-<img src={bg} className='fixed w-80 h-full'/>
 <div className='flex flex-col  mt-8 gap-4 mx-6'>
  <h2 className=' text-base font-semibold'>Qu'est-ce qu'une carie ?</h2>
  <p className='text-sm font-light'>Eh bien, c'est une petite tache ou un trou qui se forme dans une dent à cause de la nourriture que nous mangeons.</p>

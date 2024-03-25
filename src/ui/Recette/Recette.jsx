@@ -26,8 +26,9 @@ return (
         </h1>
     </div>
 </header>
-<img src={bg} className='absolute w-80 h-full'/>
-<div className='flex flex-col  mt-8 gap-4 mx-6 z-40'>
+
+{/* <img src={bg} className='absolute w-80 h-full'/> */}
+<div className='flex flex-col mt-8 gap-4 mx-6 z-40'>
 <img src={plat} className=''/>
  <h2 className=' text-2xl font-light'>L'omelette tendresse</h2>
  <h3 className=' text-base font-base'>Les ingrédients</h3>

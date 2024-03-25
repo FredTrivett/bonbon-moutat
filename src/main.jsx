@@ -6,8 +6,13 @@ import Root from './routes/root.jsx';
 import ErrorPage from './ui/ErrorPage/';
 import Quiz, { loader as QuizLoader } from './routes/quiz.jsx';
 import Timer from './routes/timer.jsx';
-
+import Home from './routes/home.jsx';
+import Soin from './routes/soin.jsx';
+import Caries from './routes/caries.jsx';
+import Recettes from './routes/recette.jsx';
+import Aliment_a_eviter from './routes/aliment.jsx';
 import './index.css';
+
 
 
 const router = createBrowserRouter([
@@ -24,7 +29,27 @@ const router = createBrowserRouter([
       {
         path: '/Timer',
         element: <Timer />,
-      }
+      },
+      {
+        path: '/home',
+        element: <Home />,
+      },
+      {
+        path: '/soin_des_dents',
+        element: <Soin />,
+      },
+      {
+        path: '/recette_du_jour',
+        element: <Recettes />,
+      },
+      {
+        path: '/caries',
+        element: <Caries />,
+      },
+      {
+        path: '/aliment_a_eviter',
+        element: <Aliment_a_eviter />,
+      },
     ],
   }
 ]);
