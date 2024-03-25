@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from './routes/root.jsx';
 import ErrorPage from './ui/ErrorPage/';
 import Quiz, { loader as QuizLoader } from './routes/quiz.jsx';
+import Timer from './routes/timer.jsx';
 
 import './index.css';
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         element: <Quiz />,
         loader: QuizLoader
       },
+      {
+        path: '/Timer',
+        element: <Timer />,
+      }
     ],
   }
 ]);

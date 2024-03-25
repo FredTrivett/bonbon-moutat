@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import QuizQuestion from './QuizQuestion';
 import QuizAnswer from './QuizAnswer';
-import { Link } from 'react-router-dom';
 
 function QuizCard({ questions }) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -35,20 +34,12 @@ function QuizCard({ questions }) {
                     <h2 className="font-light text-indigo-50 text-center">Le Quizz de Pompon</h2>
                     <h3 className="text-indigo-50 text-xl font-medium text-center"></h3>
                 </div>
-                <div className="px-6 z-10 flex justify-center flex-col h-full pt-6 pb-2 gap-4">
-                    <h4 className="text-center text-2xl font-semibold w-10 pb-6">Bravo! Tu as finis <br></br> mon quiz...</h4>
+                <div className="px-6 z-10 flex flex-col h-full pt-6 pb-10">
+                    <h4 className="text-center text-xl font-semibold">{score}</h4>
 
-                    <div className='flex justify-center items-center relative'>
-                        <img className='w-48' src="/truth_bunny_happy.png" alt="" />
-                        <div className='absolute top-0 h-[9em] flex justify-center w-40 items-center'>
-                            <p className="text-center text-2xl font-bold">Tu as eu la note de {score}/3!</p>
-                        </div>
-                    </div>
                 </div>
-                <div className='bg-indigo-500 z-10 w-full flex align-center justify-center p-6 rounded-t-[30px] flex-col'>
-                    <Link to="/" className="font-normal text-indigo-50 text-center w-full">
-                        J'ai Fnis!
-                    </Link>
+                <div className={`${selectedOption ? 'bg-indigo-500' : 'bg-indigo-300'} z-10 w-full flex align-center justify-center p-6 rounded-t-[30px] flex-col`}>
+
                 </div>
             </div>
         );
