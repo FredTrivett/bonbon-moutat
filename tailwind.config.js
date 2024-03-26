@@ -9,7 +9,7 @@ export default {
         darkblue: "hsl(var(--darkblue)/<alpha-value>)",
       },
       backgroundImage: {
-        bg: "url('/public/background.png')",
+        bg: "url('/background.png')",
       }
     },
   },

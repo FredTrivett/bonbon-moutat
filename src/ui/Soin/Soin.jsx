@@ -54,7 +54,7 @@ return (
         </h2>
     </div>
     </Link>
-    <Link to="/dents_de_lait"> 
+    <Link to="/dent_de_lait"> 
     <div className='flex flex-col gap-4 items-center justify-start border-2 rounded-2xl px-4 py-4 cursor-pointer '>
         <img src={dent} alt='chronometre icon' className='w-14'/>
         <h2 className="text-sm text-wrap w-24 text-center">

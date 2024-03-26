@@ -46,7 +46,7 @@ function QuizCard({ questions }) {
                     </div>
                 </div>
                 <div className='bg-indigo-500 z-10 w-full flex align-center justify-center p-6 rounded-t-[30px] flex-col'>
-                    <Link to="/" className="font-normal text-indigo-50 text-center w-full">
+                    <Link to="/home" className="font-normal text-indigo-50 text-center w-full">
                         J'ai Fnis!
                     </Link>
                 </div>

@@ -12,6 +12,7 @@ import Caries from './routes/caries.jsx';
 import Recettes from './routes/recette.jsx';
 import Aliment_a_eviter from './routes/aliment.jsx';
 import './index.css';
+import Dents from './ui/Dents/Dents.jsx';
 
 
 
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/recette_du_jour',
         element: <Recettes />,
+      },
+      {
+        path: '/dent_de_lait',
+        element: <Dents />,
       },
       {
         path: '/caries',
