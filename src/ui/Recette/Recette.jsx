@@ -9,7 +9,7 @@ import cuisinier from '/cook.png'
 export default function Recette(){
 return (
     <>
-<header className= 'bg-indigo-400 pb-10'>
+<header className= 'relative bg-indigo-400 pb-10'>
     <nav className='flex justify-end mr-6 pt-5'>
     <img className=' justify-end' src={compte} alt='comptelogo' />
     </nav>
