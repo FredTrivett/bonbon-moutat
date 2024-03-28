@@ -10,7 +10,10 @@ export default {
       },
       backgroundImage: {
         bg: "url('/background.png')",
-      }
+      },
+      fontFamily: {
+        fredoka: ["Fredoka", "sans-serif"],
+      },
     },
   },
   plugins: [],
