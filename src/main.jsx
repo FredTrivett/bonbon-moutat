@@ -2,7 +2,6 @@ import React, { Children } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Root from './routes/root.jsx';
 import Layout from './routes/layout.jsx';
 import ErrorPage from './ui/ErrorPage/';
 import Quiz, { loader as QuizLoader } from './routes/quiz.jsx';
@@ -29,7 +28,7 @@ const router = createBrowserRouter([
         element: <Acceuil />,
       },
       {
-        path: '/Quiz',
+        path: '/quiz',
         element: <Quiz />,
         loader: QuizLoader
       },

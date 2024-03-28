@@ -60,7 +60,7 @@ export default function Accueil() {
                         </h2>
                     </div>
                 </Link>
-                <Link to="/quiz">
+                <Link to="/Quiz">
                     <div className='flex gap-4 items-center justify-start border-2 rounded-2xl px-4 py-1 mx-8 cursor-pointer'>
                         <img src={dent} alt='chronometre icon' className='w-8' />
 
