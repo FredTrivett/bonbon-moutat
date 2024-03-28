@@ -1,10 +1,8 @@
-import bg from '../../assets/background.png'
 import React, { useState, useEffect } from 'react';
 export default function Accueil(){
    
 return (
     <>
-   <img src={bg} className='absolute w-80 h-full'/>
 <div className=' w-full h-full flex flex-col justify-center items-center px-6'>
    <div className='flex flex-col items-center gap-3'>
  <h1 className='font-bold text-indigo-500 text-xl text-center'>Bienvenue sur Bunbun tes dents</h1>
