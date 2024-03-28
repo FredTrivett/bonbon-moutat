@@ -11,6 +11,7 @@ import Soin from './routes/soin.jsx';
 import Caries from './routes/caries.jsx';
 import Recettes from './routes/recette.jsx';
 import Aliment_a_eviter from './routes/aliment.jsx';
+import Acceuil from './routes/choix.jsx';
 import './index.css';
 import Dents from './ui/Dents/Dents.jsx';
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         path: '/Quiz',
         element: <Quiz />,
         loader: QuizLoader
+      },
+      {
+        path: '/acceuil',
+        element: <Acceuil />,
       },
       {
         path: '/Timer',
