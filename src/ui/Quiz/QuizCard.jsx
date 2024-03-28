@@ -36,7 +36,7 @@ function QuizCard({ questions }) {
                     <h3 className="text-indigo-50 text-xl font-medium text-center"></h3>
                 </div>
                 <div className="px-6 z-10 flex justify-center flex-col h-full pt-6 pb-2 gap-4">
-                    <h4 className="text-center text-2xl font-semibold w-10 pb-6">Bravo! Tu as finis <br></br> mon quiz...</h4>
+                    <h4 className="text-center text-2xl font-semibold w-30 pb-6">Bravo! Tu as finis <br></br> mon quiz...</h4>
 
                     <div className='flex justify-center items-center relative'>
                         <img className='w-48' src="/truth_bunny_happy.png" alt="" />
@@ -47,7 +47,7 @@ function QuizCard({ questions }) {
                 </div>
                 <div className='bg-indigo-500 z-10 w-full flex align-center justify-center p-6 rounded-t-[30px] flex-col'>
                     <Link to="/home" className="font-normal text-indigo-50 text-center w-full">
-                        J'ai Fnis!
+                        J'ai Finis!
                     </Link>
                 </div>
             </div>

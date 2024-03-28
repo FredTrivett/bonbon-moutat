@@ -65,7 +65,7 @@ const Timer = () => {
 
     return (
         <div className="flex flex-col items-center justify-start pt-12 h-full space-y-4 overflow-hidden relative ">
-            <Link to="/" className='absolute top-4 left-3' > <img src="/back_arrow.svg" alt="back" /> </Link>
+            <Link to="/home" className='absolute top-4 left-3' onClick={handleStop} > <img src="/back_arrow.svg" alt="back" /> </Link>
             <svg width={svgSize} height={svgSize} viewBox={`0 0 ${svgSize} ${svgSize}`} className="rotate-[-90deg] z-20 relative">
                 {/* Inner static circle */}
                 <circle

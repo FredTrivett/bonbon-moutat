@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Root from './routes/root.jsx';
+import Layout from './routes/layout.jsx';
 import ErrorPage from './ui/ErrorPage/';
 import Quiz, { loader as QuizLoader } from './routes/quiz.jsx';
 import Timer from './routes/timer.jsx';
@@ -21,16 +22,16 @@ const router = createBrowserRouter([
   {
     path: '/',
     errorElement: < ErrorPage />,
-    element: <Root />,
+    element: <Layout />,
     children: [
+      {
+        index: true,
+        element: <Acceuil />,
+      },
       {
         path: '/Quiz',
         element: <Quiz />,
         loader: QuizLoader
-      },
-      {
-        path: '/acceuil',
-        element: <Acceuil />,
       },
       {
         path: '/Timer',
