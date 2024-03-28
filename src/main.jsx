@@ -2,7 +2,6 @@ import React, { Children } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Root from './routes/root.jsx';
 import Layout from './routes/layout.jsx';
 import ErrorPage from './ui/ErrorPage/';
 import Quiz, { loader as QuizLoader } from './routes/quiz.jsx';
@@ -12,7 +11,7 @@ import Soin from './routes/soin.jsx';
 import Caries from './routes/caries.jsx';
 import Recettes from './routes/recette.jsx';
 import Aliment_a_eviter from './routes/aliment.jsx';
-import Acceuil from './routes/choix.jsx';
+import Acceuil from './routes/Accueil.jsx';
 import './index.css';
 import Dents from './ui/Dents/Dents.jsx';
 
