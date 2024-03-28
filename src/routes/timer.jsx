@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Timer = () => {
     const [isActive, setIsActive] = useState(false);
@@ -9,8 +10,8 @@ const Timer = () => {
     const audioRef = useRef(new Audio('/chanson.mp3')); // Replace with the correct path
 
     // The radius for the inner content of the circle and its circumference
-    const innerRadius = 90;
-    const strokeWidth = 10;
+    const innerRadius = 110;
+    const strokeWidth = 5;
     // The outer radius is slightly larger to accommodate the stroke width
     const outerRadius = innerRadius + strokeWidth / 2;
     const svgSize = outerRadius * 2;
@@ -63,7 +64,8 @@ const Timer = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-full space-y-4 overflow-hidden relative">
+        <div className="flex flex-col items-center justify-start pt-12 h-full space-y-4 overflow-hidden relative ">
+            <Link to="/" className='absolute top-4 left-3' > <img src="/back_arrow.svg" alt="back" /> </Link>
             <svg width={svgSize} height={svgSize} viewBox={`0 0 ${svgSize} ${svgSize}`} className="rotate-[-90deg] z-20 relative">
                 {/* Inner static circle */}
                 <circle
@@ -78,7 +80,7 @@ const Timer = () => {
                     cx={svgSize / 2}
                     cy={svgSize / 2}
                     r={innerRadius}
-                    stroke="white"
+                    stroke="#2D3052"
                     strokeWidth={strokeWidth}
                     fill="transparent"
                     strokeDasharray={circumference}
@@ -101,21 +103,32 @@ const Timer = () => {
             <div className="z-30">
                 {/* Buttons */}
                 {!isActive && !isPaused && (
-                    <button onClick={handlePlay} className="px-4 py-2 bg-blue-500 text-white rounded">Play</button>
+                    <button onClick={handlePlay} className="px-4 py-2 rounded">
+                        <img src="/play_timer.png" alt="play" />
+                    </button>
                 )}
                 {isActive && (
                     <>
-                        <button onClick={handleStop} className="px-4 py-2 bg-red-500 text-white rounded mr-2">Pause</button>
-                        <button onClick={handleRestart} className="px-4 py-2 bg-green-500 text-white rounded">Restart</button>
+                        <button onClick={handleStop} className="px-4 py-2 rounded mr-2">
+                            <img src="/pause_timer.png" alt="play" />
+                        </button>
+                        <button onClick={handleRestart} className="px-4 py-2 rounded">
+                            <img src="/stop_timer.png" alt="play" />
+                        </button>
                     </>
                 )}
                 {!isActive && isPaused && (
                     <>
-                        <button onClick={handlePlay} className="px-4 py-2 bg-blue-500 text-white rounded mr-2">Continue</button>
-                        <button onClick={handleRestart} className="px-4 py-2 bg-green-500 text-white rounded">Restart</button>
+                        <button onClick={handlePlay} className="px-4 py-2 rounded mr-2">
+                            <img src="/play_timer.png" alt="play" />
+                        </button>
+                        <button onClick={handleRestart} className="px-4 py-2 rounded">
+                            <img src="/stop_timer.png" alt="play" />
+                        </button>
                     </>
                 )}
             </div>
+            <img src="/brosse_fort.png" alt="timer" className="absolute -bottom-14 w-64 " />
         </div>
     );
 };
